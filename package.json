@@ -1,6 +1,6 @@
 {
 	"name": "node-percipio-learneractivitytoxapi",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Retrieve a Learner Activity Report from Percipio, transform to xapi statements and save locally",
 	"main": "app.js",
 	"scripts": {
