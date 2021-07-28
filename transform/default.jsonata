@@ -1,0 +1,53 @@
+$.(
+    $comment := '*******************************************************';
+    $comment := '*******************************************************';
+    $comment := 'Simple Example that converts Learner Activity Report';
+    $comment := 'Records to xAPI Completed Statements';
+    $comment := 'Author: martinholden-skillsoft';
+    $comment := 'Date: 28-JUL-2021';
+    $comment := 'Dependency: Uses functions from https://www.npmjs.com/package/jsonata-extended';
+    $comment := '*******************************************************';
+    $comment := '*******************************************************';
+
+    $xapiduration := function($row) {(
+        $duration := $number($row.duration ? $row.duration : 0);
+
+        $hour := $floor($duration / 3600);
+        $minute := $floor($duration / 60) - ($hour * 60);
+        $second := $floor($duration % 60);
+
+        $hourstr := $hour = 0 ? '' : $join([$hour&'','H']);
+        $minutestr := $minute = 0 ? '' : $join([$minute&'','M']);
+        $secondstr := $second = 0 ? '' : $join([$second&'','S']);
+
+        $join(['PT',$hourstr,$minutestr,$secondstr],'');
+    )};
+
+    $xapi := (
+        $.{
+        "id": xapistatementid,
+        "actor": {
+            "objectType": "Agent",
+            "account": {
+                "homePage": $homepage,
+                "name": $trim($lowercase(userId))
+            }
+        },
+        "verb": {
+            "id": "http://adlnet.gov/expapi/verbs/completed",
+            "display": {
+                "en": "completed"
+            }
+        },
+        "object": xapiobject,
+        "result": {
+            "completion": true,
+            "duration": $xapiduration($)
+        },
+        "timestamp": completedDate,
+        "version": "1.0.0"
+    }
+    );
+
+  $merge([$xapi]);
+ )

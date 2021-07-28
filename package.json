@@ -1,0 +1,63 @@
+{
+	"name": "node-percipio-learneractivitytoxapi",
+	"version": "0.0.0",
+	"description": "Retrieve a Learner Activity Report from Percipio, transform to xapi statements and save locally",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node ./app.js",
+		"lint": "eslint **/*.js",
+		"preversion": "npm run lint",
+		"postversion": "git push && git push --tags && npm run changelog && git push ",
+		"postinstall": "",
+		"changelog": "rimraf CHANGELOG.md && auto-changelog --template keepachangelog && git add . && git commit . -m changelog && git push",
+		"changelog2": "rimraf CHANGELOG.md && auto-changelog --template keepachangelog"
+	},
+	"keywords": [
+		"skillsoft",
+		"percipio",
+		"jsonata",
+		"streams"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/martinholden-skillsoft/node-percipio-learneractivitytoxapi.git"
+	},
+	"author": {
+		"name": "Martin Holden",
+		"email": "12408585+martinholden-skillsoft@users.noreply.github.com"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"access-safe": "^0.1.0",
+		"axios": "^0.21.1",
+		"axios-rate-limit": "^1.3.0",
+		"config": "^3.3.6",
+		"delve": "^0.3.2",
+		"dotenv-safe": "^8.2.0",
+		"json-stringify-safe": "^5.0.1",
+		"jsonata-extended": "^0.3.6",
+		"jsonstream2": "^3.0.0",
+		"lodash": "^4.17.21",
+		"mkdirp": "^1.0.4",
+		"moment": "^2.29.1",
+		"papaparse": "^5.3.1",
+		"retry-axios": "^2.4.0",
+		"stream-combiner": "^0.2.2",
+		"through2": "^4.0.2",
+		"uuid": "^8.3.2",
+		"winston": "^3.2.1",
+		"winston-null": "^2.0.0"
+	},
+	"devDependencies": {
+		"auto-changelog": "^2.3.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^7.31.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-import": "^2.23.4",
+		"eslint-plugin-prettier": "^3.4.0",
+		"prettier": "^2.3.2",
+		"rimraf": "^3.0.2"
+	}
+}
