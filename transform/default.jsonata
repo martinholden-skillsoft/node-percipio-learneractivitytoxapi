@@ -23,6 +23,41 @@ $.(
         $join(['PT',$hourstr,$minutestr,$secondstr],'');
     )};
 
+    $getxapi := function ($contentType, $contentId) {(
+
+        $assert($exists($contentType) and $length($contentType) != 0,'$getxapiid() - $contentType must be specified');
+        $assert($exists($contentId) and $length($contentId) != 0,'$getxapiid() - $contentId must be specified');
+
+        $contentTypeNormalized := $replace($lowercase($contentType), /[_-\s]/, '');
+        $contentTypePathLabel := $contentTypeNormalized = 'linkedcontent' ? 'lc' : $lowercase($contentType);
+
+        $PERCIPIO_NS := 'https://xapi.percipio.com/xapi';
+        $EXPAPI_NS := 'http://adlnet.gov/expapi';
+        $ADL_NS := 'https://w3id.org/xapi/adl';
+        $TLA_NS := 'https://w3id.org/xapi/tla';
+        $VIDEO_NS := 'https://w3id.org/xapi/video';
+
+        $activityTypes := {
+            'customchannel': $PERCIPIO_NS & '/activity-type/channel',
+            'channel': $PERCIPIO_NS & '/activity-type/channel',
+            'journey': $PERCIPIO_NS & '/activity-type/curriculum',
+            'track': $PERCIPIO_NS & '/activity-type/curriculum',
+            'course': $EXPAPI_NS & '/activities/course',
+            'scheduledcontent': $EXPAPI_NS & '/activities/course',
+            'linkedcontent': $EXPAPI_NS & '/activities/course',
+            'video': $VIDEO_NS & '/activity-type/video',
+            'book': $PERCIPIO_NS & '/activity-type/book',
+            'audiobook': $PERCIPIO_NS & '/activity-type/audiobook',
+            'assessment': $EXPAPI_NS & '/activities/assessment',
+            'badge': $TLA_NS & '/activity-types/badge'
+        };
+
+        {
+            'xapiActivityId': $join(['https://xapi.percipio.com/xapi', $contentTypePathLabel, $contentId],'/'),
+            'xapiActivityTypeId': $join([$lookup($activityTypes, $contentTypeNormalized)],'/')
+        }
+    )};
+
     $xapi := (
         $.{
         "id": xapistatementid,

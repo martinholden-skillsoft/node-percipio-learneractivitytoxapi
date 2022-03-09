@@ -1,0 +1,75 @@
+{
+    "id": "b1644cf0-4244-11e8-8234-afcfa98de7f2",
+    "code": "bs_apr05_a02_enus",
+    "xapiActivityId": "https://xapi.percipio.com/xapi/course/b1644cf0-4244-11e8-8234-afcfa98de7f2",
+    "xapiActivityTypeId": "http://adlnet.gov/expapi/activities/course",
+    "characteristics": {
+        "earnsBadge": true,
+        "hasAssessment": true
+    },
+    "contentType": {
+        "percipioType": "COURSE",
+        "category": "COURSE",
+        "displayLabel": "Course",
+        "source": null
+    },
+    "localeCodes": ["en-US"],
+    "localizedMetadata": [{
+            "localeCode": "en-US",
+            "title": "Six Sigma Root Cause Analysis and Waste Elimination",
+            "description": "<p>Getting to the source of why something has gone wrong is critical to identifying the changes necessary for business process improvement. During the Improve phase in a Lean or Lean Six Sigma project, you can use statistical methods and non-statistical methods to analyze systems and processes, looking for ways to drive process improvement, process design, and process control.</p> <p>In this course, you&#39;ll learn about the key concepts and tools used in Six Sigma to identify what&#39;s causing variations and defects. And you’ll look at root cause analysis and tools used to prevent and eliminate waste in your processes. The course is aligned with ASQ’s 2015 Six Sigma Green Belt Body of Knowledge.</p>"
+        }
+    ],
+    "lifecycle": {
+        "status": "ACTIVE",
+        "publishDate": "2018-05-23T16:41:46Z",
+        "lastUpdatedDate": "2021-07-21T00:52:31Z",
+        "plannedRetirementDate": null,
+        "retiredDate": null
+    },
+    "link": "https://share.percipio.com/cd/cOZyL3R4tYGc",
+    "aiccLaunch": {
+        "url": "https://api.percipio.com/content-integration/v1/aicc/launch",
+        "params": "contentId=b1644cf0-4244-11e8-8234-afcfa98de7f2&entitlementKey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI1NThkMTVhNC0xMWQ3LTRjMzQtYTQ0NS1mZmEyNDAzYTMzZmQiLCJvcmdhbml6YXRpb25faWQiOiI1NThkMTVhNC0xMWQ3LTRjMzQtYTQ0NS1mZmEyNDAzYTMzZmQiLCJpc3MiOiJhcGkucGVyY2lwaW8uY29tIiwiaWF0IjoxNjI3OTkwMzE0fQ.c2cbUVMUATWNOJTeFc-vNtGphikh6rAcga2_LKUegAs&contentType=course"
+    },
+    "imageUrl": "https://cdn2.percipio.com/public/b/902f87c4-c84e-4a0e-8ca4-3df080c287f8/image001/modality/image001.jpg",
+    "alternateImageUrl": "https://cdn2.percipio.com/public/b/902f87c4-c84e-4a0e-8ca4-3df080c287f8/image001.jpg",
+    "keywords": [],
+    "duration": "PT1H13M12S",
+    "by": [],
+    "publication": null,
+    "credentials": {
+        "cpeCredits": 1.5,
+        "nasbaReady": true,
+        "pduCredits": null
+    },
+    "expertiseLevels": ["INTERMEDIATE"],
+    "modalities": ["WATCH"],
+    "technologies": [{
+            "title": "Six Sigma",
+            "version": "Green Belt"
+        }
+    ],
+    "associations": {
+        "areas": ["Business Operations", "American Society for Quality (ASQ)"],
+        "subjects": ["Process Improvement", "Six Sigma Certification"],
+        "channels": [{
+                "id": "41f01560-2121-11e7-ac46-dd5c3d0e46dd",
+                "title": "Six Sigma",
+                "link": "https://share.percipio.com/cd/rf7Z4KGwf14"
+            }, {
+                "id": "574e4741-3af5-4bd3-95c5-10a65f58c323",
+                "title": "Green Belt",
+                "link": "https://share.percipio.com/cd/cmiebaRkKBU4"
+            }, {
+                "id": "ccfb2291-2120-11e7-ac46-dd5c3d0e46dd",
+                "title": "Quality Management",
+                "link": "https://share.percipio.com/cd/LSYm0mJHi7Rt"
+            }
+        ],
+        "parent": null,
+        "translationGroupId": null,
+        "journeys": [],
+        "collections": ["BusinessEssentials", "BusinessSkills", "Enterprise"]
+    }
+}

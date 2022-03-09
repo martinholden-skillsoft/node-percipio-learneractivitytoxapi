@@ -15,6 +15,21 @@ config.transform = 'transform/default.jsonata';
 // The xapilookup JSON file to use
 config.xapilookup = null;
 
+// Configuration for connecting to LRS
+config.lrs = {};
+// Statements endpoint
+config.lrs.endpoint = '';
+// Basic Username
+config.lrs.username = '';
+// Basic Password
+config.lrs.password = '';
+// Basic Auth Header
+config.lrs.auth = defer((cfg) => {
+  return `Basic ${Buffer.from(`${cfg.lrs.username}:$${cfg.lrs.password}`).toString('base64')}`;
+});
+// LRS Connection Timeout
+config.lrs.timeout = 20000;
+
 config.startTimestamp = moment().utc().format('YYYYMMDD_HHmmss');
 // Null logger object
 config.logger = {};

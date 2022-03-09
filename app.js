@@ -20,7 +20,11 @@ const logger = require('./lib/logger');
 
 const pjson = require('./package.json');
 
-const { jsonataTransformStream, xapienhancementTransformStream } = require('./lib/streams');
+const {
+  jsonataTransformStream,
+  xapienhancementTransformStream,
+  xapisendTransformStream,
+} = require('./lib/streams');
 const timingAdapter = require('./lib/timingAdapter');
 
 /**
@@ -175,6 +179,9 @@ const readJSONAndTransform = (options, source) => {
     const jsonataStream = jsonataTransformStream(opts);
     // A stream that adds xapi data to each Learner Activity record
     const xapienhancementStream = xapienhancementTransformStream(opts);
+
+    const xapisendStream = xapisendTransformStream(opts);
+
     // JSON Stringify transformed data
     const processTransformedJSON = JSONStream.stringify();
     const outputStream = fs.createWriteStream(outputFile);
@@ -203,6 +210,11 @@ const readJSONAndTransform = (options, source) => {
       reject(err);
     });
 
+    xapisendStream.on('error', (err) => {
+      logger.error(err, loggingOptions);
+      reject(err);
+    });
+
     jsonataStream.on('progress', (counter) => {
       if (counter % opts.logcount === 0) {
         logger.info(`Processing. Processed: ${counter.toLocaleString()}`, {
@@ -215,6 +227,14 @@ const readJSONAndTransform = (options, source) => {
       if (counter % opts.logcount === 0) {
         logger.info(`Processing. Processed: ${counter.toLocaleString()}`, {
           label: `${loggingOptions.label}-xapienhancementStream`,
+        });
+      }
+    });
+
+    xapisendStream.on('progress', (counter) => {
+      if (counter % opts.logcount === 0) {
+        logger.info(`Processing. Processed: ${counter.toLocaleString()}`, {
+          label: `${loggingOptions.label}-xapisendStream`,
         });
       }
     });
@@ -244,6 +264,7 @@ const readJSONAndTransform = (options, source) => {
       parseJSONStream,
       xapienhancementStream,
       jsonataStream,
+      xapisendStream,
       processTransformedJSON,
       outputStream,
     ]);

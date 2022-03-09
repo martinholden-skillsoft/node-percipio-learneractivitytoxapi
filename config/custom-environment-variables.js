@@ -11,6 +11,15 @@ config.homepage = 'HOMEPAGE';
 // The xapilookup JSON file to use
 config.xapilookup = 'XAPILOOKUP';
 
+// Configuration for connecting to LRS
+config.lrs = {};
+// Statements endpoint
+config.lrs.endpoint = 'LRSENDPOINT';
+// Basic Username
+config.lrs.username = 'LRSUSERNAME';
+// Basic Password
+config.lrs.password = 'LRSPASSWORD';
+
 config.reportrequest = {};
 config.reportrequest.bearer = 'BEARER';
 // Base URI to Percipio API

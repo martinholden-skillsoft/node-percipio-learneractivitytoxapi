@@ -1,0 +1,86 @@
+{
+  "id": "b164e625-9cef-497b-80d5-7fa01e1644ab",
+  "code": null,
+  "xapiActivityId": "https://xapi.percipio.com/xapi/audiobook/b164e625-9cef-497b-80d5-7fa01e1644ab",
+  "xapiActivityTypeId": "https://xapi.percipio.com/xapi/activity-type/audiobook",
+  "characteristics": {
+    "earnsBadge": false,
+    "hasAssessment": false
+  },
+  "contentType": {
+    "percipioType": "AUDIOBOOK",
+    "category": "AUDIOBOOK",
+    "displayLabel": "Audiobook",
+    "source": null
+  },
+  "localeCodes": [
+    "en-US"
+  ],
+  "localizedMetadata": [
+    {
+      "localeCode": "en-US",
+      "title": "Deep Learning",
+      "description": "This audio edition offers an accessible and concise but comprehensive introduction to the fundamental technology at the heart of the artificial intelligence revolution."
+    }
+  ],
+  "lifecycle": {
+    "status": "ACTIVE",
+    "publishDate": "2019-12-23T07:57:38Z",
+    "lastUpdatedDate": "2020-07-17T14:02:51Z",
+    "plannedRetirementDate": null,
+    "retiredDate": null
+  },
+  "link": "https://share.percipio.com/cd/2qViclteJd",
+  "aiccLaunch": {
+    "url": "https://api.percipio.com/content-integration/v1/aicc/launch",
+    "params": "contentId=b164e625-9cef-497b-80d5-7fa01e1644ab&entitlementKey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXJ2aWNlX2FjY291bnRfaWQiOiI1NThkMTVhNC0xMWQ3LTRjMzQtYTQ0NS1mZmEyNDAzYTMzZmQiLCJvcmdhbml6YXRpb25faWQiOiI1NThkMTVhNC0xMWQ3LTRjMzQtYTQ0NS1mZmEyNDAzYTMzZmQiLCJpc3MiOiJhcGkucGVyY2lwaW8uY29tIiwiaWF0IjoxNjI3OTkwMzE0fQ.c2cbUVMUATWNOJTeFc-vNtGphikh6rAcga2_LKUegAs&contentType=audiobook"
+  },
+  "imageUrl": "https://cdn2.percipio.com/public/c/books/147016/cover-images/2a786c4d-8708-42d4-9868-965f920c20d0/modality/2a786c4d-8708-42d4-9868-965f920c20d0.jpg",
+  "alternateImageUrl": "https://images.books24x7.com/coverimages/147016.png",
+  "keywords": [],
+  "duration": "PT5H49M26S",
+  "by": [
+    "John D. Kelleher"
+  ],
+  "publication": {
+    "copyrightYear": 2019,
+    "isbn": "9781469074412",
+    "publisher": "Gildan Media"
+  },
+  "credentials": null,
+  "expertiseLevels": [],
+  "modalities": [
+    "LISTEN"
+  ],
+  "technologies": [],
+  "associations": {
+    "areas": [
+      "Aspire Journeys for Technology & Developer",
+      "Data"
+    ],
+    "subjects": [
+      "Data / ML / AI",
+      "Data Architectures"
+    ],
+    "channels": [
+      {
+        "id": "ad645560-b5a3-11e7-9235-e7f6f925afa4",
+        "title": "Machine Learning",
+        "link": "https://share.percipio.com/cd/qv_GjMhMqc81"
+      }
+    ],
+    "parent": null,
+    "translationGroupId": null,
+    "journeys": [
+      {
+        "id": "17eeca71-f2bd-4558-8d0f-df7d0122139a",
+        "title": "ML Programmer to ML Architect",
+        "link": "https://share.percipio.com/cd/2CsD_5qSdPs"
+      }
+    ],
+    "collections": [
+      "Enterprise",
+      "ITDevSkills"
+    ]
+  }
+}
